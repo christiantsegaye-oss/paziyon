@@ -1,8 +1,0 @@
-phases.setup]
-nixPkgs = ["python3"]
-
-[phases.build]
-cmds = ["echo 'Environment ready'"]
-
-[start]
-cmd = "python3 -m http.server $PORT --directory prototype"
