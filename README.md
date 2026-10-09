@@ -7,6 +7,7 @@ bystanders through first aid in their own
 language, and keeps a history of events for 
 doctors. It is built for seizures that cause falls: 
 clonic, tonic-clonic and atonic.
+
 The Inspiration & Vision
 The idea for PAZIYON came from our team's 
 shared volunteering experience at Care Epilepsy
@@ -69,6 +70,7 @@ live alert, a map and the medical ID;
 the event history (time, trigger, duration, 
 outcome) exports as CSV for the user's 
 doctor.
+
 Technical Architecture
 Mobile app & core logic: Flutter & Dart 
 (Android)
@@ -82,17 +84,20 @@ Storage: on the device only. Medical data is
 shared only during an active alert.
 Web demo & caregiver dashboard: HTML/
 JavaScript
+
 Project Team
 Christian Tsegaye: Project lead. Owns the 
 main repository  
 of the web demo and caregiver dashboard; 
 coordinates the team and releases.
+
 Eyueal Tibebu: UI and branding lead. Built 
 the app and web screens: Voxide settings, 
 the siren switch, the "Silence siren" button 
 on the emergency screen and the PAZIYON 
 branding. Also wrote the app and web-demo 
 READMEs.
+
 Hasset Jenberu: Localization and voice lead. 
 Integrated Voxide for Amharic, Afaan Oromo 
 and English: the voice engine, the bridge that 
@@ -100,12 +105,14 @@ runs Voxide inside the Android app, the
 microphone and network permissions, and 
 the Voxide setup guide. Also reviews the 
 first-aid text in all three languages.
+
 Rakeb Fikiru: Sensor and core logic lead. 
 Owns the alert flow (countdown, fall 
 detection, background protection), the 
 emergency siren and how voice drives the 
 alert. Also owns the automated tests and the 
 CI build.
+
 Lidet Kinfe: Dashboard and research lead. 
 Owns the caregiver dashboard and the web 
 server that hosts it on EthioDeploy, the 
