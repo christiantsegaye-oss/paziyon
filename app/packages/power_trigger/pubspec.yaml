@@ -1,0 +1,19 @@
+name: power_trigger
+description: Reports screen on/off changes so a background service can detect rapid power-button presses (Android).
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.9.0
+  flutter: ">=3.35.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.paziyon.power_trigger
+        pluginClass: PowerTriggerPlugin

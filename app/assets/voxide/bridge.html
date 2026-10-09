@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>P.A.Z.I.Y.O.N voice</title>
+<!--
+  Hidden page the Android app runs in a 1×1 WebView, served from
+  http://localhost:<port>/ by the app itself (Voxide allows localhost without
+  whitelisting, and localhost counts as a secure origin for the microphone).
+  Dart calls window.pz.*; this page answers through the PZ JavaScript channel.
+-->
+<script src="voxide.browser.js"></script>
+<script src="paziyon-voxide.js"></script>
+</head>
+<body>
+<script>
+(function () {
+  function post(event) {
+    try { PZ.postMessage(JSON.stringify(event)); } catch (e) { /* channel not attached yet */ }
+  }
+  var engine = null;
+  window.pz = {
+    start: function (key, lang) {
+      try {
+        if (engine) engine.stop();
+        engine = PaziyonVoxide.create({ key: key, language: lang, onEvent: post });
+        engine.start();
+      } catch (e) {
+        post({ type: 'error', message: String((e && e.message) || e) });
+        post({ type: 'status', status: 'error' });
+      }
+    },
+    stop: function () { if (engine) engine.stop(); },
+    setLanguage: function (lang) { if (engine) engine.setLanguage(lang); },
+    setState: function (state) { if (engine) engine.setState(state); },
+    resolveTool: function (id, result) { if (engine) engine.resolveTool(id, result); },
+    say: function (id, text, lang) {
+      var p = engine ? engine.say(text, lang) : Promise.resolve(false);
+      p.then(function (ok) { post({ type: 'say_done', id: id, ok: !!ok }); });
+    },
+    interrupt: function () { if (engine) engine.interrupt(); },
+  };
+  window.addEventListener('error', function (e) { post({ type: 'error', message: String(e.message) }); });
+  post({ type: 'bridge_ready' });
+})();
+</script>
+</body>
+</html>

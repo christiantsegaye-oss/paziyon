@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  prototype:
+    name: Prototype tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: prototype
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+
+  app:
+    name: Flutter app (analyze, test, build APK)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.5
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: dart analyze --fatal-infos
+      - run: flutter test
+      # DASHBOARD_URL (repository variable) is where prototype/dashboard.html is
+      # hosted; the SMS links to it. Unset leaves the link out.
+      - run: flutter build apk --release --dart-define=DASHBOARD_URL=${{ vars.DASHBOARD_URL }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seizure-alert-apk
+          path: app/build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error

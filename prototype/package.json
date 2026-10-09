@@ -1,0 +1,11 @@
+{
+  "name": "seizure-fall-alert-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browser demo of the voice-first seizure/fall alert flow and the caregiver dashboard.",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  }
+}

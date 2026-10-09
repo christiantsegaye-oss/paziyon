@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAFAFA">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0E0E11">
+  <meta name="color-scheme" content="light dark">
+  <title>P.A.Z.I.Y.O.N</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <!-- Icons: Material Icons (Apache License 2.0). -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-voice" viewBox="0 0 24 24"><path d="M9 13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4zm7.76-9.64-1.68 1.69c.84 1.18.84 2.71 0 3.89l1.68 1.69c2.02-2.02 2.02-5.07 0-7.27zM20.07 2l-1.63 1.63c2.77 3.02 2.77 7.56 0 10.74L20.07 16c3.9-3.89 3.91-9.95 0-14z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24"><path d="M21 7c0-1.38-1.12-2.5-2.5-2.5-.17 0-.34.02-.5.05V4c0-1.38-1.12-2.5-2.5-2.5-.23 0-.46.03-.67.09C14.46.66 13.56 0 12.5 0c-1.23 0-2.25.89-2.46 2.06C9.87 2.02 9.69 2 9.5 2 8.12 2 7 3.12 7 4.5v5.89c-.34-.31-.76-.54-1.22-.66L5 9.52c-.83-.23-1.7.09-2.19.83-.38.57-.4 1.31-.15 1.95l2.56 6.43C6.49 21.91 9.57 24 13 24c4.42 0 8-3.58 8-8V7z"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></symbol>
+    <symbol id="i-mic-off" viewBox="0 0 24 24"><path d="M19 11h-1.7c0 .74-.16 1.43-.43 2.05l1.23 1.23c.56-.98.9-2.09.9-3.28zm-4.02.17c0-.06.02-.11.02-.17V5c0-1.66-1.34-3-3-3S9 3.34 9 5v.18l5.98 5.99zM4.27 3 3 4.27l6.01 6.01V11c0 1.66 1.33 3 2.99 3 .22 0 .44-.03.65-.08l1.66 1.66c-.71.33-1.5.52-2.31.52-2.76 0-5.3-2.1-5.3-5.1H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c.91-.13 1.77-.45 2.54-.9L19.73 21 21 19.73 4.27 3z"/></symbol>
+    <symbol id="i-stop" viewBox="0 0 24 24"><path d="M6 6h12v12H6z"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="m4 12 1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><path d="M13 3c-4.97 0-9 4.03-9 9H1l3.89 3.89.07.14L9 12H6c0-3.87 3.13-7 7-7s7 3.13 7 7-3.13 7-7 7c-1.93 0-3.68-.79-4.94-2.06l-1.42 1.42C8.27 19.99 10.51 21 13 21c4.97 0 9-4.03 9-9s-4.03-9-9-9zm-1 5v5l4.28 2.54.72-1.21-3.5-2.08V8H12z"/></symbol>
+    <symbol id="i-medical" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 11h-3v3h-4v-3H7v-4h3V7h4v3h3v4z"/></symbol>
+    <symbol id="i-tune" viewBox="0 0 24 24"><path d="M3 17v2h6v-2H3zM3 5v2h10V5H3zm10 16v-2h8v-2h-8v-2h-2v6h2zM7 9v2H3v2h4v2h2V9H7zm14 4v-2H11v2h10zm-6-4h2V7h4V5h-4V3h-2v6z"/></symbol>
+    <symbol id="i-sensors" viewBox="0 0 24 24"><path d="M7.76 16.24C6.67 15.16 6 13.66 6 12s.67-3.16 1.76-4.24l1.42 1.42C8.45 9.9 8 10.9 8 12s.45 2.1 1.17 2.83l-1.41 1.41zm8.48 0C17.33 15.16 18 13.66 18 12s-.67-3.16-1.76-4.24l-1.42 1.42C15.55 9.9 16 10.9 16 12s-.45 2.1-1.17 2.83l1.41 1.41zM12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm8 2c0 2.21-.9 4.21-2.35 5.65l1.42 1.42C20.88 17.26 22 14.76 22 12s-1.12-5.26-2.93-7.07l-1.42 1.42C19.1 7.79 20 9.79 20 12zM6.35 6.35 4.93 4.93C3.12 6.74 2 9.24 2 12s1.12 5.26 2.93 7.07l1.42-1.42C4.9 16.21 4 14.21 4 12s.9-4.21 2.35-5.65z"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></symbol>
+    <symbol id="i-call" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol>
+    <symbol id="i-sms" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></symbol>
+    <symbol id="i-timer" viewBox="0 0 24 24"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61 1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></symbol>
+    <symbol id="i-cycle" viewBox="0 0 24 24"><path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M19 12v7H5v-7H3v7c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-7h-2zm-6 .67 2.59-2.58L17 11.5l-5 5-5-5 1.41-1.41L11 12.67V3h2z"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></symbol>
+    <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4 9.91 6.09 12 8.18V4z"/></symbol>
+  </svg>
+
+  <div class="app">
+    <main>
+      <!-- Home -->
+      <section class="view" data-view="home">
+        <header class="page-head">
+          <h1 class="brand"><img src="img/logo.png" alt="" width="40" height="40"><span class="display">P.A.Z.I.Y.O.N</span></h1>
+          <span id="protection" class="pill"><i class="dot dot--live"></i><span>Protected</span></span>
+        </header>
+
+        <div class="hero">
+          <button id="triggerBtn" class="help" aria-label="Hold to send an emergency alert">
+            <svg class="help__ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="help__track" cx="50" cy="50" r="47"/><circle class="help__progress" cx="50" cy="50" r="47"/></svg>
+            <span class="help__face">
+              <svg class="icon icon--xl" aria-hidden="true"><use href="#i-hand"/></svg>
+              <span class="help__label">Hold for help</span>
+            </span>
+          </button>
+          <p class="muted center">Or just say “Help” · <span lang="am">“እርዳታ”</span> · <span lang="om">“Gargaari”</span></p>
+        </div>
+
+        <h2 class="group-title">Voice</h2>
+        <div class="group group--pad">
+          <div class="voice" data-voice data-prompt="Say “Help” to start the countdown hands-free."></div>
+          <div class="row">
+            <button id="micBtn" class="btn btn--ink grow"></button>
+            <div class="seg" id="listenLang" role="group" aria-label="Listening language"></div>
+          </div>
+          <form id="typeForm" class="field-row" autocomplete="off">
+            <input id="typeInput" type="text" placeholder="Or type what you would say" aria-label="Type a phrase" enterkeyhint="send">
+            <button class="icon-btn" aria-label="Send"><svg class="icon"><use href="#i-up"/></svg></button>
+          </form>
+        </div>
+
+        <h2 class="group-title">Protection</h2>
+        <div class="group">
+          <div class="row2">
+            <svg class="icon row2__icon" aria-hidden="true"><use href="#i-sensors"/></svg>
+            <div class="row2__text"><b>Fall detection</b><span id="fallStage" class="muted">Watching for falls</span></div>
+            <button id="simulateFall" class="btn btn--text">Simulate a fall</button>
+          </div>
+          <button class="row2" data-go="settings">
+            <svg class="icon row2__icon" aria-hidden="true"><use href="#i-people"/></svg>
+            <span class="row2__text"><b id="contactsTitle"></b><span id="contactsSub" class="muted"></span></span>
+            <svg class="icon muted" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+          <button class="row2" data-go="history">
+            <svg class="icon row2__icon" aria-hidden="true"><use href="#i-history"/></svg>
+            <span class="row2__text"><b id="lastEvent"></b></span>
+            <svg class="icon muted" aria-hidden="true"><use href="#i-chevron"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- History -->
+      <section class="view" data-view="history" hidden>
+        <header class="page-head">
+          <h1 class="display">History</h1>
+          <button id="exportCsv" class="icon-btn" aria-label="Export CSV"><svg class="icon"><use href="#i-download"/></svg></button>
+        </header>
+        <p class="muted">Every alert, including cancelled ones. Useful for your doctor.</p>
+        <div id="historyList"></div>
+      </section>
+
+      <!-- Medical ID -->
+      <section class="view" data-view="medical" hidden>
+        <header class="page-head"><h1 class="display">Medical ID</h1></header>
+        <p class="muted">Stays on this device. Shown to bystanders and sent to contacts only during an alert.</p>
+        <form id="profileForm" class="form">
+          <label>Name<input name="name" autocomplete="name"></label>
+          <label>Condition
+            <select name="condition"><option>Epilepsy</option><option>Stroke risk</option><option>Other</option></select>
+          </label>
+          <label>Seizure type
+            <select name="seizureType"><option>Tonic-clonic</option><option>Absence</option><option>Focal</option><option>Unknown / unsure</option></select>
+          </label>
+          <label>Medications<input name="medications" placeholder="e.g. Carbamazepine 200 mg"></label>
+          <label>Allergies<input name="allergies"></label>
+          <label>Blood type<input name="bloodType" placeholder="Optional"></label>
+        </form>
+        <h2 class="group-title">What a bystander sees</h2>
+        <div id="medicalPreview"></div>
+      </section>
+
+      <!-- Settings -->
+      <section class="view" data-view="settings" hidden>
+        <header class="page-head"><h1 class="display">Settings</h1></header>
+
+        <h2 class="group-title">Emergency contacts <span id="contactCount"></span></h2>
+        <div class="group">
+          <div id="contactList"></div>
+          <form id="contactForm" class="form group--pad" autocomplete="off">
+            <p class="muted small">They get an SMS with your location during an alert. Tell them in advance.</p>
+            <label>Name<input name="name" required></label>
+            <label>Phone<input name="phone" type="tel" inputmode="tel" placeholder="+251 9…" required></label>
+            <label>Relationship<input name="relationship" placeholder="Optional"></label>
+            <button class="btn btn--ink"><svg class="icon"><use href="#i-person"/></svg>Add contact</button>
+          </form>
+        </div>
+
+        <form id="settingsForm">
+          <h2 class="group-title">Alert</h2>
+          <div class="group group--pad">
+            <label class="slider-label">
+              <span class="row row--between"><b>Cancel window</b><b><span id="cancelWindowOut">15</span> s</b></span>
+              <input name="cancelWindowSeconds" type="range" min="10" max="30" step="1">
+            </label>
+            <hr>
+            <b>Spoken prompts language</b>
+            <div class="seg" id="promptLang" role="group" aria-label="Spoken prompts language"></div>
+          </div>
+          <div class="group">
+            <label class="row2 switch-row">
+              <svg class="icon row2__icon" aria-hidden="true"><use href="#i-sound"/></svg>
+              <span class="row2__text"><b>Siren</b><span class="muted">Loud siren before and between instructions, to draw people over</span></span>
+              <input name="siren" type="checkbox" role="switch">
+            </label>
+          </div>
+
+          <h2 class="group-title">Voxide voice</h2>
+          <div class="group group--pad">
+            <label>Voxide key
+              <input name="voxideKey" placeholder="vox_pub_…" autocomplete="off" autocapitalize="off" spellcheck="false">
+            </label>
+            <p id="voxideStatus" class="muted small"></p>
+          </div>
+          <div class="group">
+            <label class="row2 switch-row">
+              <svg class="icon row2__icon" aria-hidden="true"><use href="#i-mic"/></svg>
+              <span class="row2__text"><b>Listen with Voxide all the time</b><span class="muted">Off: Voxide only runs during a countdown or alert</span></span>
+              <input name="voxideAlwaysListen" type="checkbox" role="switch">
+            </label>
+          </div>
+
+          <h2 class="group-title">Triggers</h2>
+          <div class="group">
+            <label class="row2 switch-row">
+              <svg class="icon row2__icon" aria-hidden="true"><use href="#i-mic"/></svg>
+              <span class="row2__text"><b>Voice trigger</b><span class="muted">Say “Help” to start the countdown</span></span>
+              <input name="voiceTrigger" type="checkbox" role="switch">
+            </label>
+            <label class="row2 switch-row">
+              <svg class="icon row2__icon" aria-hidden="true"><use href="#i-sensors"/></svg>
+              <span class="row2__text"><b>Fall detection</b><span class="muted">Freefall, impact, then stillness</span></span>
+              <input name="fallDetection" type="checkbox" role="switch">
+            </label>
+            <div class="group--pad">
+              <label>Fall sensitivity
+                <select name="sensitivity">
+                  <option value="low">Low: fewer false alarms</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High: catches more falls</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </form>
+
+        <h2 class="group-title">Data</h2>
+        <div class="group">
+          <button id="loadDemo" class="row2"><svg class="icon row2__icon" aria-hidden="true"><use href="#i-person"/></svg><span class="row2__text"><b>Load demo profile</b></span></button>
+          <button id="deleteAll" class="row2"><svg class="icon row2__icon" aria-hidden="true"><use href="#i-trash"/></svg><span class="row2__text"><b>Delete all data</b><span class="muted">Profile, contacts, settings and history</span></span></button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="tabs" aria-label="Main">
+      <button data-tab="home" aria-current="page"><svg class="icon"><use href="#i-shield"/></svg>Home</button>
+      <button data-tab="history"><svg class="icon"><use href="#i-history"/></svg>History</button>
+      <button data-tab="medical"><svg class="icon"><use href="#i-medical"/></svg>Medical ID</button>
+      <button data-tab="settings"><svg class="icon"><use href="#i-tune"/></svg>Settings</button>
+    </nav>
+  </div>
+
+  <!-- Welcome -->
+  <div id="welcome" class="overlay overlay--plain" hidden>
+    <div class="sheet">
+      <img class="logo-img" src="img/logo.png" alt="P.A.Z.I.Y.O.N logo" width="96" height="96">
+      <h1 class="display display--xl">P.A.Z.I.Y.O.N</h1>
+      <p class="lede">When you can’t speak for yourself, it speaks for you.</p>
+      <b>Choose your language</b>
+      <button class="choice" data-lang="am"><span lang="am">አማርኛ</span><svg class="icon muted"><use href="#i-arrow"/></svg></button>
+      <button class="choice" data-lang="en"><span>English</span><svg class="icon muted"><use href="#i-arrow"/></svg></button>
+      <button class="choice" data-lang="om"><span lang="om">Afaan Oromoo</span><svg class="icon muted"><use href="#i-arrow"/></svg></button>
+      <p class="muted small">Sets the spoken language. You can change it later. A demo profile is filled in for you.</p>
+    </div>
+  </div>
+
+  <!-- Countdown -->
+  <div id="countdown" class="overlay overlay--countdown" hidden role="alertdialog" aria-labelledby="countNum">
+    <div class="countdown">
+      <p class="countdown__source"><svg class="icon"><use id="countIcon" href="#i-mic"/></svg><span id="countSource"></span></p>
+      <div class="ring" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle class="ring__track" cx="50" cy="50" r="46"/><circle id="countRing" class="ring__bar" cx="50" cy="50" r="46"/></svg>
+        <span id="countNum" class="ring__num">15</span>
+      </div>
+      <p id="countText" class="countdown__text" aria-live="polite"></p>
+      <div class="voice voice--dark panel-dark" data-voice data-prompt="Say “I’m okay” · “ደህና ነኝ” · “Nagaan jira” to cancel."></div>
+      <button id="cancelBtn" class="btn btn--okay"><svg class="icon icon--lg"><use href="#i-check"/></svg>I’m okay, cancel</button>
+    </div>
+  </div>
+
+  <!-- Bystander mode -->
+  <div id="bystander" class="overlay overlay--emergency" hidden role="alertdialog" aria-labelledby="emHeader">
+    <header id="emHeader" class="em-header"></header>
+    <div class="em-body">
+      <div class="row row--between">
+        <span class="em-timer"><svg class="icon"><use href="#i-timer"/></svg><span id="elapsed" aria-label="Time since alert">0:00</span></span>
+        <div class="seg seg--dark" id="stepLang" role="group" aria-label="Instruction language"></div>
+      </div>
+      <button id="sirenBtn" class="btn btn--dark" hidden><svg class="icon"><use href="#i-sound-off"/></svg>Silence siren</button>
+      <button id="cycleBtn" class="btn btn--text btn--dark-text end"><svg class="icon"><use href="#i-cycle"/></svg><span></span></button>
+      <p id="stepCount" class="muted-dark small"></p>
+      <p class="em-step" id="stepText" aria-live="assertive"></p>
+      <ol class="em-dots" id="stepDots" aria-hidden="true"></ol>
+
+      <a id="callBtn" class="btn btn--call" href="tel:907"><svg class="icon icon--lg"><use href="#i-call"/></svg>Call emergency services · 907</a>
+      <a id="smsBtn" class="btn btn--dark" href="#"><svg class="icon"><use href="#i-sms"/></svg><span></span></a>
+      <a id="dashLink" class="btn btn--dark" href="#" target="_blank" rel="noopener">Open caregiver dashboard</a>
+
+      <div class="panel-dark">
+        <h2 class="heading">Talk to this phone</h2>
+        <div class="voice voice--dark" data-voice data-prompt="Ask “How long has it been?”, “What do I do now?”, “Next”, “Any medication?” or “Call for help”."></div>
+        <form id="askForm" class="field-row field-row--dark" autocomplete="off">
+          <input id="askInput" type="text" placeholder="Or type a question" aria-label="Type a question" enterkeyhint="send">
+          <button class="icon-btn" aria-label="Ask"><svg class="icon"><use href="#i-up"/></svg></button>
+        </form>
+        <ul id="convo" class="convo" aria-live="polite"></ul>
+      </div>
+
+      <div id="bystanderMedical"></div>
+
+      <button id="stopBtn" class="hold" aria-label="Hold for 2 seconds to stop the alert">
+        <span class="hold__fill" aria-hidden="true"></span>
+        <span class="hold__label">Patient returned — hold to stop alert</span>
+      </button>
+      <p class="muted-dark small center">Amharic and Afaan Oromo text is a draft pending review by native speakers and Care Epilepsy Ethiopia.</p>
+    </div>
+  </div>
+
+  <!-- Resolved -->
+  <div id="resolved" class="overlay overlay--plain" hidden role="dialog" aria-labelledby="resolvedTitle">
+    <div class="sheet sheet--center">
+      <div class="logo logo--ok"><svg class="icon icon--lg"><use href="#i-check"/></svg></div>
+      <h1 id="resolvedTitle" class="display"></h1>
+      <p id="resolvedText" class="muted"></p>
+      <a id="okaySms" class="btn btn--okay-sm" href="#" hidden><svg class="icon"><use href="#i-sms"/></svg>Tell contacts “I’m okay”</a>
+      <button id="resolvedDone" class="btn btn--ink">Done</button>
+    </div>
+  </div>
+
+  <script src="vendor/voxide.browser.js"></script>
+  <script src="vendor/paziyon-voxide.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
